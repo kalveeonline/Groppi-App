@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GROPPI Design System - Golden Digital Marketing Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* GROPPI Design System - Black & Gold Luxury Theme */
+    
+    /* Core Colors - Black Background with Golden Accents */
+    --background: 0 0% 7%;
+    --foreground: 43 96% 56%;
+    
+    /* Primary - Rich Golden */
+    --primary: 43 96% 56%;
+    --primary-dark: 38 92% 50%;
+    --primary-light: 48 96% 65%;
+    --primary-glow: 43 100% 70%;
+    --primary-foreground: 0 0% 7%;
+    
+    /* Secondary - Lighter Gold */
+    --secondary: 48 90% 60%;
+    --secondary-foreground: 0 0% 7%;
+    
+    /* Card & Surfaces - Dark with subtle transparency */
+    --card: 0 0% 10%;
+    --card-foreground: 43 96% 56%;
+    
+    /* Popover - Dark with high contrast */
+    --popover: 0 0% 5%;
+    --popover-foreground: 43 96% 56%;
+    
+    /* Muted Elements */
+    --muted: 0 0% 15%;
+    --muted-foreground: 43 50% 50%;
+    
+    /* Accent */
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 7%;
+    
+    /* Destructive */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Borders & Inputs */
+    --border: 43 96% 56%;
+    --input: 0 0% 15%;
+    --ring: 43 96% 56%;
+    
+    /* Social Media Brand Colors */
+    --facebook: 221 44% 41%;
+    --twitter: 203 89% 53%;
+    --instagram: 340 75% 55%;
+    --linkedin: 201 100% 35%;
+    --youtube: 0 100% 50%;
+    --tiktok: 177 100% 47%;
+    
+    /* Industry Colors */
+    --industry-medical: 200 100% 50%;
+    --industry-engineering: 30 100% 50%;
+    --industry-sales: 142 71% 45%;
+    --industry-marketing: 280 67% 55%;
+    --industry-construction: 25 75% 47%;
+    --industry-real-estate: 210 100% 56%;
+    --industry-ecommerce: 330 81% 60%;
+    --industry-business: 43 96% 56%;
+    --industry-service: 160 84% 39%;
+    --industry-export: 220 90% 56%;
+    
+    /* Button Action Colors */
+    --button-appointment: 142 71% 45%;
+    --button-call: 200 100% 50%;
+    
+    /* Sidebar */
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 43 96% 56%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 43 96% 56%;
+    --sidebar-border: 43 96% 56%;
+    --sidebar-ring: 43 96% 56%;
+    
+    --radius: 0.5rem;
+    
+    /* Custom Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 7%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 8%), hsl(0, 0%, 12%));
+    --gradient-primary: linear-gradient(135deg, hsl(43, 96%, 56%), hsl(48, 96%, 65%));
+    --gradient-gold: linear-gradient(135deg, hsl(43, 96%, 56%), hsl(38, 92%, 50%));
+    
+    /* Shadows with golden glow */
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.5);
+    --shadow-hero: 0 20px 40px -10px hsl(43 96% 56% / 0.3);
+    --shadow-primary: 0 10px 40px -10px hsl(43 96% 56% / 0.5);
+    --shadow-elegant: 0 20px 60px -15px hsl(43 96% 56% / 0.3);
+    --shadow-glow: 0 0 40px hsl(43 100% 70% / 0.4);
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 43 96% 56%;
+    
+    --primary: 43 96% 56%;
+    --primary-dark: 38 92% 50%;
+    --primary-light: 48 96% 65%;
+    --primary-glow: 43 100% 70%;
+    --primary-foreground: 0 0% 7%;
+    
+    --secondary: 48 90% 60%;
+    --secondary-foreground: 0 0% 7%;
+    
+    --card: 0 0% 10%;
+    --card-foreground: 43 96% 56%;
+    
+    --popover: 0 0% 5%;
+    --popover-foreground: 43 96% 56%;
+    
+    --muted: 0 0% 15%;
+    --muted-foreground: 43 50% 50%;
+    
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 7%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 43 96% 56%;
+    --input: 0 0% 15%;
+    --ring: 43 96% 56%;
+    
+    --facebook: 221 44% 41%;
+    --twitter: 203 89% 53%;
+    --instagram: 340 75% 55%;
+    --linkedin: 201 100% 35%;
+    --youtube: 0 100% 50%;
+    --tiktok: 177 100% 47%;
+    
+    /* Industry Colors */
+    --industry-medical: 200 100% 50%;
+    --industry-engineering: 30 100% 50%;
+    --industry-sales: 142 71% 45%;
+    --industry-marketing: 280 67% 55%;
+    --industry-construction: 25 75% 47%;
+    --industry-real-estate: 210 100% 56%;
+    --industry-ecommerce: 330 81% 60%;
+    --industry-business: 43 96% 56%;
+    --industry-service: 160 84% 39%;
+    --industry-export: 220 90% 56%;
+    
+    /* Button Action Colors */
+    --button-appointment: 142 71% 45%;
+    --button-call: 200 100% 50%;
+    
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 43 96% 56%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 43 96% 56%;
+    --sidebar-border: 43 96% 56%;
+    --sidebar-ring: 43 96% 56%;
+    
+    --gradient-hero: linear-gradient(135deg, hsl(0, 0%, 7%) 0%, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 8%), hsl(0, 0%, 12%));
+    --gradient-primary: linear-gradient(135deg, hsl(43, 96%, 56%), hsl(48, 96%, 65%));
+    --gradient-gold: linear-gradient(135deg, hsl(43, 96%, 56%), hsl(38, 92%, 50%));
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.5);
+    --shadow-hero: 0 20px 40px -10px hsl(43 96% 56% / 0.3);
+    --shadow-primary: 0 10px 40px -10px hsl(43 96% 56% / 0.5);
+    --shadow-elegant: 0 20px 60px -15px hsl(43 96% 56% / 0.3);
+    --shadow-glow: 0 0 50px hsl(43 100% 70% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: hsl(0, 0%, 7%);
+    color: hsl(43, 96%, 56%);
+  }
+  
+  /* Ensure all text elements use golden color by default */
+  h1, h2, h3, h4, h5, h6, p, span, div, a, button, label, input, textarea {
+    @apply text-foreground;
+  }
+  
+  /* Matte black finish for all backgrounds */
+  .bg-background {
+    background: hsl(0, 0%, 7%);
+  }
+  
+  /* Ensure cards and popovers have proper backgrounds */
+  .bg-card {
+    background: hsl(0, 0%, 10%);
+  }
+  
+  .bg-popover {
+    background: hsl(0, 0%, 5%);
+  }
+}
