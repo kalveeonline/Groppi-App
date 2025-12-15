@@ -17,13 +17,13 @@ const App: React.FC = () => {
     const interval = setInterval(() => {
       setDownloads(prev => prev.map(item => {
         if (item.status === DownloadStatus.Downloading) {
-          const increment = Math.random() * 5 + 0.5;
+          const increment = Math.random() * 8 + 0.5;
           const newProgress = Math.min(item.progress + increment, 100);
           return {
             ...item,
             progress: newProgress,
             status: newProgress >= 100 ? DownloadStatus.Completed : DownloadStatus.Downloading,
-            speed: newProgress >= 100 ? '' : `${(Math.random() * 10 + 2).toFixed(1)} MB/s`
+            speed: newProgress >= 100 ? '' : `${(Math.random() * 15 + 2).toFixed(1)} MB/s`
           };
         }
         return item;
@@ -116,7 +116,7 @@ const App: React.FC = () => {
               <div className="bg-blue-600 p-1.5 rounded-lg">
                 <Zap className="w-5 h-5 text-white" />
               </div>
-              <span className="font-bold text-lg text-slate-800">Groppi</span>
+              <span className="font-bold text-xl text-slate-800 tracking-tight">Groppi</span>
             </div>
             <button className="bg-white p-2 rounded-full shadow-sm border border-slate-200">
                <Bell className="w-5 h-5 text-slate-600" />
@@ -130,12 +130,12 @@ const App: React.FC = () => {
               <p className="text-slate-500 text-sm">Manage your intelligent downloads</p>
             </div>
             <div className="flex items-center gap-4">
-              <div className="flex items-center bg-white px-4 py-2.5 rounded-2xl border border-slate-200 shadow-sm focus-within:ring-2 focus-within:ring-blue-100 transition-all">
+              <div className="flex items-center bg-white px-4 py-2.5 rounded-2xl border border-slate-200 shadow-sm focus-within:ring-2 focus-within:ring-blue-100 transition-all w-64">
                 <Search className="w-4 h-4 text-slate-400 mr-2" />
                 <input 
                   type="text" 
                   placeholder="Search files..." 
-                  className="bg-transparent border-none focus:outline-none text-sm w-48 text-slate-700"
+                  className="bg-transparent border-none focus:outline-none text-sm w-full text-slate-700 placeholder:text-slate-400"
                 />
               </div>
               <button className="bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm relative hover:bg-slate-50 transition-colors">
@@ -167,7 +167,7 @@ const App: React.FC = () => {
               <div className="flex items-center justify-between">
                 <h3 className="font-bold text-slate-800 text-lg">Active Downloads</h3>
                 {downloads.length > 0 && (
-                  <span className="text-xs font-medium text-slate-400 bg-slate-100 px-2 py-1 rounded-full">
+                  <span className="text-xs font-medium text-slate-500 bg-white border border-slate-200 px-2 py-1 rounded-lg shadow-sm">
                     {downloads.length} items
                   </span>
                 )}
@@ -229,7 +229,7 @@ const App: React.FC = () => {
                     value={newUrl}
                     onChange={(e) => setNewUrl(e.target.value)}
                     placeholder="https://"
-                    className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800 transition-all"
+                    className="w-full pl-4 pr-10 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-800 transition-all font-medium"
                     autoFocus
                   />
                   <div className="absolute right-3 top-1/2 -translate-y-1/2">
@@ -254,9 +254,16 @@ const App: React.FC = () => {
                 <button 
                   type="submit" 
                   disabled={isAdding}
-                  className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-blue-500/30"
+                  className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-semibold transition-colors disabled:opacity-70 disabled:cursor-not-allowed shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2"
                 >
-                  {isAdding ? 'Analyzing...' : 'Download'}
+                  {isAdding ? (
+                    <>
+                      <Sparkles className="w-4 h-4 animate-spin" />
+                      Analyzing...
+                    </>
+                  ) : (
+                    'Download'
+                  )}
                 </button>
               </div>
             </form>

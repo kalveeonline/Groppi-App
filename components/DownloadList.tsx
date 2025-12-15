@@ -25,13 +25,13 @@ const DownloadList: React.FC<DownloadListProps> = ({ downloads, onPauseResume, o
       <div className="flex flex-col items-center justify-center h-64 text-slate-400 bg-white rounded-3xl border border-slate-100 shadow-sm mx-auto max-w-2xl">
         <Package className="w-16 h-16 mb-4 opacity-20" />
         <p className="font-medium">No downloads yet</p>
-        <p className="text-sm">Tap + to add a link</p>
+        <p className="text-sm mt-1">Tap + to add a link</p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-3 pb-24">
+    <div className="space-y-4 pb-24">
       {downloads.map((item) => (
         <div key={item.id} className="bg-white rounded-2xl p-4 shadow-sm border border-slate-100 flex items-center gap-4 transition-all hover:shadow-md animate-in fade-in slide-in-from-bottom-2">
           <div className="p-3 bg-slate-50 rounded-2xl shrink-0">
@@ -62,16 +62,16 @@ const DownloadList: React.FC<DownloadListProps> = ({ downloads, onPauseResume, o
             <div className="flex justify-between items-center text-xs text-slate-500">
               <span className="flex items-center gap-1">
                 {item.status === DownloadStatus.Analyzing && <Sparkles className="w-3 h-3 text-purple-500 animate-pulse" />}
-                {item.status}
+                <span className={item.status === DownloadStatus.Error ? 'text-red-500' : ''}>{item.status}</span>
                 {item.status === DownloadStatus.Downloading && ` • ${item.speed}`}
               </span>
               <span>{item.size} • {item.progress.toFixed(0)}%</span>
             </div>
 
             {item.aiSummary && (
-               <div className="mt-1.5 flex flex-wrap gap-1">
-                 {item.aiTags?.slice(0, 2).map(tag => (
-                   <span key={tag} className="px-1.5 py-0.5 bg-slate-100 text-slate-600 text-[10px] rounded-md">{tag}</span>
+               <div className="mt-2 flex flex-wrap gap-1">
+                 {item.aiTags?.slice(0, 3).map(tag => (
+                   <span key={tag} className="px-1.5 py-0.5 bg-slate-100 text-slate-600 text-[10px] rounded-md font-medium">{tag}</span>
                  ))}
                </div>
             )}

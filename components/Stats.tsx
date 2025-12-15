@@ -22,15 +22,15 @@ const Stats: React.FC<StatsProps> = ({ downloads }) => {
   return (
     <div className="bg-white p-6 rounded-3xl shadow-sm border border-slate-100 flex flex-col h-full">
       <h3 className="text-lg font-bold text-slate-800 mb-2">Storage Overview</h3>
-      <div className="flex-1 min-h-[150px]">
+      <div className="flex-1 min-h-[200px]">
         <ResponsiveContainer width="100%" height="100%">
           <PieChart>
             <Pie
               data={chartData}
               cx="50%"
               cy="50%"
-              innerRadius={50}
-              outerRadius={70}
+              innerRadius={60}
+              outerRadius={80}
               paddingAngle={5}
               dataKey="value"
             >
@@ -38,13 +38,12 @@ const Stats: React.FC<StatsProps> = ({ downloads }) => {
                 <Cell key={`cell-${index}`} fill={chartColors[index % chartColors.length]} />
               ))}
             </Pie>
-            <Tooltip />
+            <Tooltip 
+               contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
+            />
             <Legend verticalAlign="bottom" height={36} iconType="circle" />
           </PieChart>
         </ResponsiveContainer>
-      </div>
-      <div className="mt-2 text-center text-sm text-slate-500">
-         <span className="font-semibold text-slate-800">{downloads.length}</span> Total Files
       </div>
     </div>
   );
